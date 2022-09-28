@@ -11,7 +11,7 @@ using SiteNoticias.Data;
 namespace SiteNoticias.Migrations
 {
     [DbContext(typeof(ContextoBD))]
-    [Migration("20220928003606_Inicial")]
+    [Migration("20220928003911_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,10 +42,14 @@ namespace SiteNoticias.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("NoticiaId")
+                    b.Property<string>("Conteudo")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("NoticiaId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UsuarioId")
+                    b.Property<int>("UsuarioId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -148,13 +152,21 @@ namespace SiteNoticias.Migrations
 
             modelBuilder.Entity("SiteNoticias.Models.Comentario", b =>
                 {
-                    b.HasOne("SiteNoticias.Models.Noticia", null)
+                    b.HasOne("SiteNoticias.Models.Noticia", "Noticia")
                         .WithMany("Comentarios")
-                        .HasForeignKey("NoticiaId");
+                        .HasForeignKey("NoticiaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("SiteNoticias.Models.Usuario", null)
+                    b.HasOne("SiteNoticias.Models.Usuario", "Usuario")
                         .WithMany("Comentarios")
-                        .HasForeignKey("UsuarioId");
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Noticia");
+
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("SiteNoticias.Models.Noticia", b =>
