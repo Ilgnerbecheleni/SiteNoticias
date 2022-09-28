@@ -25,6 +25,10 @@ namespace SiteNoticias.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Categorias");
@@ -87,7 +91,8 @@ namespace SiteNoticias.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoriaId");
+                    b.HasIndex("CategoriaId")
+                        .IsUnique();
 
                     b.HasIndex("UsuarioId");
 
@@ -153,8 +158,8 @@ namespace SiteNoticias.Migrations
             modelBuilder.Entity("SiteNoticias.Models.Noticia", b =>
                 {
                     b.HasOne("SiteNoticias.Models.Categoria", "Categoria")
-                        .WithMany()
-                        .HasForeignKey("CategoriaId")
+                        .WithOne("Noticia")
+                        .HasForeignKey("SiteNoticias.Models.Noticia", "CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -174,6 +179,11 @@ namespace SiteNoticias.Migrations
                         .IsRequired();
 
                     b.Navigation("Perfil");
+                });
+
+            modelBuilder.Entity("SiteNoticias.Models.Categoria", b =>
+                {
+                    b.Navigation("Noticia");
                 });
 
             modelBuilder.Entity("SiteNoticias.Models.Noticia", b =>

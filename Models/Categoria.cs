@@ -7,11 +7,11 @@ namespace SiteNoticias.Models
     {
         [Required]
         public int Id { get; set; }
-        // [Required]
-        // [Column(TypeName = "varchar(50)")]
-        // public string Nome { get; set; }
+        [Required]
+        [Column(TypeName = "varchar(50)")]
+        public string Nome { get; set; }
 
-        // public Noticia Noticia { get; set; }
+        public Noticia Noticia { get; set; }
 
 
     }

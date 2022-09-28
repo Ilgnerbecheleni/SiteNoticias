@@ -11,7 +11,7 @@ using SiteNoticias.Data;
 namespace SiteNoticias.Migrations
 {
     [DbContext(typeof(ContextoBD))]
-    [Migration("20220928002917_Inicial")]
+    [Migration("20220928003606_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,6 +26,10 @@ namespace SiteNoticias.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
 
                     b.HasKey("Id");
 
@@ -89,7 +93,8 @@ namespace SiteNoticias.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoriaId");
+                    b.HasIndex("CategoriaId")
+                        .IsUnique();
 
                     b.HasIndex("UsuarioId");
 
@@ -155,8 +160,8 @@ namespace SiteNoticias.Migrations
             modelBuilder.Entity("SiteNoticias.Models.Noticia", b =>
                 {
                     b.HasOne("SiteNoticias.Models.Categoria", "Categoria")
-                        .WithMany()
-                        .HasForeignKey("CategoriaId")
+                        .WithOne("Noticia")
+                        .HasForeignKey("SiteNoticias.Models.Noticia", "CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -176,6 +181,11 @@ namespace SiteNoticias.Migrations
                         .IsRequired();
 
                     b.Navigation("Perfil");
+                });
+
+            modelBuilder.Entity("SiteNoticias.Models.Categoria", b =>
+                {
+                    b.Navigation("Noticia");
                 });
 
             modelBuilder.Entity("SiteNoticias.Models.Noticia", b =>

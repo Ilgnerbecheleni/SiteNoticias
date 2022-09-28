@@ -17,7 +17,9 @@ namespace SiteNoticias.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(type: "varchar(50)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
@@ -140,7 +142,8 @@ namespace SiteNoticias.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Noticias_CategoriaId",
                 table: "Noticias",
-                column: "CategoriaId");
+                column: "CategoriaId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Noticias_UsuarioId",
