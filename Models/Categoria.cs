@@ -10,8 +10,7 @@ namespace SiteNoticias.Models
         [Required]
         [Column(TypeName = "varchar(50)")]
         public string Nome { get; set; }
-
-        public Noticia Noticia { get; set; }
+        public List<Noticia> Noticia { get; set; }
 
 
     }

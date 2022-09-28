@@ -44,6 +44,9 @@ namespace SiteNoticias.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<DateTime>("DataComentario")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<int>("NoticiaId")
                         .HasColumnType("int");
 
@@ -75,9 +78,8 @@ namespace SiteNoticias.Migrations
                     b.Property<int>("Curtida")
                         .HasColumnType("int");
 
-                    b.Property<string>("DataPublicacao")
-                        .IsRequired()
-                        .HasColumnType("Varchar(100)");
+                    b.Property<DateTime>("DataPublicacao")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Imagem")
                         .IsRequired()
@@ -87,7 +89,7 @@ namespace SiteNoticias.Migrations
                         .IsRequired()
                         .HasColumnType("Varchar(100)");
 
-                    b.Property<int?>("UsuarioId")
+                    b.Property<int>("UsuarioId")
                         .HasColumnType("int");
 
                     b.Property<int>("View")
@@ -95,8 +97,7 @@ namespace SiteNoticias.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoriaId")
-                        .IsUnique();
+                    b.HasIndex("CategoriaId");
 
                     b.HasIndex("UsuarioId");
 
@@ -113,9 +114,6 @@ namespace SiteNoticias.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(100)");
 
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("Perfis");
@@ -130,9 +128,6 @@ namespace SiteNoticias.Migrations
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("varchar(100)");
-
-                    b.Property<int>("NoticiasId")
-                        .HasColumnType("int");
 
                     b.Property<int>("PerfilId")
                         .HasColumnType("int");
@@ -170,16 +165,20 @@ namespace SiteNoticias.Migrations
             modelBuilder.Entity("SiteNoticias.Models.Noticia", b =>
                 {
                     b.HasOne("SiteNoticias.Models.Categoria", "Categoria")
-                        .WithOne("Noticia")
-                        .HasForeignKey("SiteNoticias.Models.Noticia", "CategoriaId")
+                        .WithMany("Noticia")
+                        .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SiteNoticias.Models.Usuario", null)
+                    b.HasOne("SiteNoticias.Models.Usuario", "Usuario")
                         .WithMany("Noticias")
-                        .HasForeignKey("UsuarioId");
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Categoria");
+
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("SiteNoticias.Models.Usuario", b =>

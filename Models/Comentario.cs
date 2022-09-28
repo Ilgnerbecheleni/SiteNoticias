@@ -11,6 +11,8 @@ namespace SiteNoticias.Models
         [Required]
         [Column(TypeName = "text")]
         public string Conteudo { get; set; }
+        [Required]
+        public DateTime DataComentario { get; set; }
 
         public Usuario Usuario { get; set; }
 

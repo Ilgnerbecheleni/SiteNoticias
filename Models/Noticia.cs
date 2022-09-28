@@ -21,16 +21,19 @@ namespace SiteNoticias.Models
         public string Conteudo { get; set; }
 
         [Required]
-        [Column(TypeName = "Varchar(100)")]
+
         public DateTime DataPublicacao { get; set; }
-
-
 
         public int Curtida { get; set; }
 
         public int View { get; set; }
 
         public List<Comentario> Comentarios { get; set; }
+
+        public Usuario Usuario { get; set; }
+
+        public int UsuarioId { get; set; }
+
 
         public Categoria Categoria { get; set; }
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -34,8 +35,7 @@ namespace SiteNoticias.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Nome = table.Column<string>(type: "varchar(100)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    UsuarioId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
@@ -53,8 +53,7 @@ namespace SiteNoticias.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Senha = table.Column<string>(type: "varchar(50)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    PerfilId = table.Column<int>(type: "int", nullable: false),
-                    NoticiasId = table.Column<int>(type: "int", nullable: false)
+                    PerfilId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -80,12 +79,11 @@ namespace SiteNoticias.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Conteudo = table.Column<string>(type: "Text", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    DataPublicacao = table.Column<string>(type: "Varchar(100)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    DataPublicacao = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     Curtida = table.Column<int>(type: "int", nullable: false),
                     View = table.Column<int>(type: "int", nullable: false),
-                    CategoriaId = table.Column<int>(type: "int", nullable: false),
-                    UsuarioId = table.Column<int>(type: "int", nullable: true)
+                    UsuarioId = table.Column<int>(type: "int", nullable: false),
+                    CategoriaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -100,7 +98,8 @@ namespace SiteNoticias.Migrations
                         name: "FK_Noticias_Usuarios_UsuarioId",
                         column: x => x.UsuarioId,
                         principalTable: "Usuarios",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -112,6 +111,7 @@ namespace SiteNoticias.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Conteudo = table.Column<string>(type: "text", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    DataComentario = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UsuarioId = table.Column<int>(type: "int", nullable: false),
                     NoticiaId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -146,8 +146,7 @@ namespace SiteNoticias.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Noticias_CategoriaId",
                 table: "Noticias",
-                column: "CategoriaId",
-                unique: true);
+                column: "CategoriaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Noticias_UsuarioId",

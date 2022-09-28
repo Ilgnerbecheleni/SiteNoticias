@@ -21,13 +21,9 @@ namespace SiteNoticias.Models
         public int PerfilId { get; set; }
 
         public List<Noticia> Noticias { get; set; }
-        public int NoticiasId { get; set; }
+
 
         public List<Comentario> Comentarios { get; set; }
-
-
-
-
 
     }
 }
