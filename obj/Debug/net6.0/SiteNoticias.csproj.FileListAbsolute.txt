@@ -33,3 +33,43 @@ C:\Users\ilgne\OneDrive\Área de Trabalho\POO2\Trabalho_Site\SiteNoticias\obj\De
 C:\Users\ilgne\OneDrive\Área de Trabalho\POO2\Trabalho_Site\SiteNoticias\obj\Debug\net6.0\SiteNoticias.pdb
 C:\Users\ilgne\OneDrive\Área de Trabalho\POO2\Trabalho_Site\SiteNoticias\obj\Debug\net6.0\SiteNoticias.genruntimeconfig.cache
 C:\Users\ilgne\OneDrive\Área de Trabalho\POO2\Trabalho_Site\SiteNoticias\obj\Debug\net6.0\ref\SiteNoticias.dll
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\appsettings.json
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\SiteNoticias.exe
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\SiteNoticias.deps.json
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\SiteNoticias.runtimeconfig.json
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\SiteNoticias.dll
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\SiteNoticias.pdb
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\Humanizer.dll
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\SiteNoticias.csproj.AssemblyReference.cache
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\SiteNoticias.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\SiteNoticias.AssemblyInfoInputs.cache
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\SiteNoticias.AssemblyInfo.cs
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\SiteNoticias.csproj.CoreCompileInputs.cache
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\SiteNoticias.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\SiteNoticias.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\staticwebassets\msbuild.SiteNoticias.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\staticwebassets\msbuild.build.SiteNoticias.props
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.SiteNoticias.props
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.SiteNoticias.props
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\scopedcss\bundle\SiteNoticias.styles.css
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\SiteNoticias.csproj.CopyComplete
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\SiteNoticias.dll
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\refint\SiteNoticias.dll
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\SiteNoticias.pdb
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\SiteNoticias.genruntimeconfig.cache
+C:\Users\T-GAMER\Desktop\Projetos\POO2\SiteNoticias\obj\Debug\net6.0\ref\SiteNoticias.dll

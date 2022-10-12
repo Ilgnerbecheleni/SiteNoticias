@@ -1,10 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using SiteNoticias.Data;
+using SiteNoticias.Repositorios;
+using SiteNoticias.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<PerfilServico>();
 
+builder.Services.AddScoped<PerfilRepositorio>();
 
 builder.Services.AddDbContext<ContextoBD>(
 

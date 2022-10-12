@@ -11,8 +11,8 @@ using SiteNoticias.Data;
 namespace SiteNoticias.Migrations
 {
     [DbContext(typeof(ContextoBD))]
-    [Migration("20220928230000_Inicial")]
-    partial class Inicial
+    [Migration("20221012170546_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

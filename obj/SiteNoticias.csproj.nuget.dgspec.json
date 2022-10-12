@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ilgne\\OneDrive\\Área de Trabalho\\POO2\\Trabalho_Site\\SiteNoticias\\SiteNoticias.csproj": {}
+    "C:\\Users\\T-GAMER\\Desktop\\Projetos\\POO2\\SiteNoticias\\SiteNoticias.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ilgne\\OneDrive\\Área de Trabalho\\POO2\\Trabalho_Site\\SiteNoticias\\SiteNoticias.csproj": {
+    "C:\\Users\\T-GAMER\\Desktop\\Projetos\\POO2\\SiteNoticias\\SiteNoticias.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ilgne\\OneDrive\\Área de Trabalho\\POO2\\Trabalho_Site\\SiteNoticias\\SiteNoticias.csproj",
+        "projectUniqueName": "C:\\Users\\T-GAMER\\Desktop\\Projetos\\POO2\\SiteNoticias\\SiteNoticias.csproj",
         "projectName": "SiteNoticias",
-        "projectPath": "C:\\Users\\ilgne\\OneDrive\\Área de Trabalho\\POO2\\Trabalho_Site\\SiteNoticias\\SiteNoticias.csproj",
-        "packagesPath": "C:\\Users\\ilgne\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ilgne\\OneDrive\\Área de Trabalho\\POO2\\Trabalho_Site\\SiteNoticias\\obj\\",
+        "projectPath": "C:\\Users\\T-GAMER\\Desktop\\Projetos\\POO2\\SiteNoticias\\SiteNoticias.csproj",
+        "packagesPath": "C:\\Users\\T-GAMER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\T-GAMER\\Desktop\\Projetos\\POO2\\SiteNoticias\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ilgne\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\T-GAMER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -65,7 +65,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -77,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100-rc.2.22477.23\\RuntimeIdentifierGraph.json"
         }
       }
     }
