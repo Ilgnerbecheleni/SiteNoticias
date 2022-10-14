@@ -68,6 +68,9 @@ public PerfilResposta PutPerfil([FromRoute]int id ,[FromBody] PerfilCriarAtualiz
 
 return _perfilServico.AtualizarPerfil(id,perfilEditado);
 
+
+
+
 }
 
     }
