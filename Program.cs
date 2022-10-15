@@ -10,6 +10,14 @@ builder.Services.AddScoped<PerfilServico>();
 
 builder.Services.AddScoped<PerfilRepositorio>();
 
+//------------------------------------------------
+
+builder.Services.AddScoped<CategoriaServico>();
+
+builder.Services.AddScoped<CategoriaRepositorio>();
+
+
+
 builder.Services.AddDbContext<ContextoBD>(
 
 options =>
