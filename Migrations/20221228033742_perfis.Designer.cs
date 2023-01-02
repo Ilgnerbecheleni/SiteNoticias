@@ -11,8 +11,8 @@ using SiteNoticias.Data;
 namespace SiteNoticias.Migrations
 {
     [DbContext(typeof(ContextoBD))]
-    [Migration("20221012170546_initial")]
-    partial class initial
+    [Migration("20221228033742_perfis")]
+    partial class perfis
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -127,18 +127,25 @@ namespace SiteNoticias.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("varchar(100)");
 
-                    b.Property<int>("PerfilId")
+                    b.Property<int?>("PerfilId")
                         .HasColumnType("int");
 
                     b.Property<string>("Senha")
                         .IsRequired()
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("varchar(70)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.HasIndex("PerfilId");
 
@@ -187,9 +194,7 @@ namespace SiteNoticias.Migrations
                 {
                     b.HasOne("SiteNoticias.Models.Perfil", "Perfil")
                         .WithMany("Usuarios")
-                        .HasForeignKey("PerfilId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PerfilId");
 
                     b.Navigation("Perfil");
                 });

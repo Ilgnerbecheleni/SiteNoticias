@@ -1,29 +1,34 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace SiteNoticias.Models
+
+
+namespace SiteNoticias.Models;
+[Index(nameof(Email), IsUnique = true)]
+public class Usuario
 {
-    public class Usuario
-    {
-        [Required]
-        public int Id { get; set; }
+    [Required]
+    public int Id { get; set; }
 
-        [Required]
-        [Column(TypeName = "varchar(100)")]
-        public string Nome { get; set; }
+    [Required]
+    [Column(TypeName = "varchar(100)")]
+    public string Nome { get; set; }
 
-        [Required]
-        [Column(TypeName = "varchar(50)")]
-        public string Senha { get; set; }
+    [Required]
+    [Column(TypeName = "varchar(50)")]
+    public string Email { get; set; }
 
-        public Perfil Perfil { get; set; }
+    [Required]
+    [Column(TypeName = "varchar(70)")]
+    public string Senha { get; set; }
 
-        public int PerfilId { get; set; }
+    public Perfil Perfil { get; set; }
+    
 
-        public List<Noticia> Noticias { get; set; }
+    public List<Noticia> Noticias { get; set; }
 
 
-        public List<Comentario> Comentarios { get; set; }
+    public List<Comentario> Comentarios { get; set; }
 
-    }
 }

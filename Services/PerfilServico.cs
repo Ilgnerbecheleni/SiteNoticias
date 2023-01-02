@@ -5,6 +5,8 @@ using SiteNoticias.Repositorios;
 
 namespace SiteNoticias.Services;
 
+
+
 public class PerfilServico
 {
    //campo injetado no construtor

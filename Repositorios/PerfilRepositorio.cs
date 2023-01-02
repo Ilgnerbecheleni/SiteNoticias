@@ -25,7 +25,7 @@ _contexto = contexto ;
 
 
 
-    public Perfil CriarPefil(Perfil perfil){
+   public Perfil CriarPefil(Perfil perfil){
 
 // manda contexto salvar no BD
 _contexto.Perfis.Add(perfil);

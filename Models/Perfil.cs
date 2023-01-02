@@ -11,6 +11,7 @@ namespace SiteNoticias.Models
         [Required]
         [Column(TypeName = "varchar(100)")]
         public string Nome { get; set; }
+       
 
         public List<Usuario> Usuarios { get; set; }
 

@@ -16,6 +16,22 @@ builder.Services.AddScoped<CategoriaServico>();
 
 builder.Services.AddScoped<CategoriaRepositorio>();
 
+//--------------------------------------------------
+
+builder.Services.AddScoped<UsuarioServico>();
+
+builder.Services.AddScoped<UsuarioRepositorio>();
+
+//--------------------------------------------------
+builder.Services.AddScoped<NoticiaServico>();
+
+builder.Services.AddScoped<NoticiaRepositorio>();
+
+//--------------------------------------------------
+builder.Services.AddScoped<ComentarioServico>();
+
+builder.Services.AddScoped<ComentarioRepositorio>();
+
 
 
 builder.Services.AddDbContext<ContextoBD>(
@@ -29,6 +45,10 @@ builder.Configuration.GetConnectionString("ConexaoBanco"),
 ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("ConexaoBanco"))
 
 ));
+
+builder.Services.AddCors();
+
+
 
 
 
@@ -45,6 +65,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(x => x
+               .AllowAnyMethod()
+               .AllowAnyHeader()
+               .SetIsOriginAllowed(origin => true) // allow any origin
+               .AllowCredentials()); // allow credentials
+
 
 app.UseHttpsRedirection();
 
