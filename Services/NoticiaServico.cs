@@ -132,12 +132,12 @@ public class NoticiaServico
             throw new BadHttpRequestException("Usuario não Existente");
         }
 
-
+        DateTime dataAtual = DateTime.Now;
 
         //Copiar os dados da requisicao pro modelo
         noticiaEditada.Adapt(noticia);
 
-       
+        noticia.DataPublicacao = dataAtual.Date;
         noticia.Categoria = categoriabusca;
         noticia.Usuario = usuarioBusca;
 
@@ -151,7 +151,48 @@ public class NoticiaServico
 
     }
 
-   
+   public NoticiaResposta AdicionarCurtida(int noticiaId)
+    {
+
+        var noticia = BuscarNotPeloId(noticiaId);
+        if (noticia is null)
+        {
+            throw new BadHttpRequestException("Noticia Não encontrada");
+        }
+        noticia.Curtida++;
+
+        _noticiaRepositorio.AtualizarNoticia();
+
+        _noticiaRepositorio.AtualizarNoticia();
+
+        //Copiar do modelo para a resposta
+        var noticiaResposta = noticia.Adapt<NoticiaResposta>();
+
+        return noticiaResposta;
+
+    }
+
+    public NoticiaResposta AdicionarView(int noticiaId)
+    {
+
+        var noticia = BuscarNotPeloId(noticiaId);
+        if (noticia is null)
+        {
+            throw new BadHttpRequestException("Noticia Não encontrada");
+        }
+        noticia.View++;
+
+        _noticiaRepositorio.AtualizarNoticia();
+
+        _noticiaRepositorio.AtualizarNoticia();
+
+        //Copiar do modelo para a resposta
+        var noticiaResposta = noticia.Adapt<NoticiaResposta>();
+
+        return noticiaResposta;
+
+    }
+
 
 
 

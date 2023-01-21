@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SiteNoticias.DTOS.Comentario;
 using SiteNoticias.DTOS.Usuario;
 using SiteNoticias.Excecoes;
@@ -8,6 +9,7 @@ namespace SiteNoticias.Controller;
 
 [ApiController]
 [Route("usuarios")]
+[Authorize (Roles ="ADM")]
 public class UsuarioController:ControllerBase
 {
 
@@ -34,13 +36,13 @@ public class UsuarioController:ControllerBase
             return BadRequest(e.Message);
         }
     }
-
+    
     [HttpGet]
     public ActionResult<List<UsuarioResposta>> GetUsuarios()
     {
         return Ok(_usuarioServico.ListarUsuarios());
     }
-
+  
     [HttpGet("{id:int}")]
     public ActionResult<UsuarioResposta> GetUsuario([FromRoute] int id)
     {

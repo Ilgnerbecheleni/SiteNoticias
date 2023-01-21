@@ -26,6 +26,7 @@ public class UsuarioRepositorio
     {
         return _contexto.Usuarios
           .AsNoTracking()
+          .Include(u=>u.Perfil)
           .FirstOrDefault(usuario => usuario.Email == email);
     }
 

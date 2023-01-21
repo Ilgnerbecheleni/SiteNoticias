@@ -1,14 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SiteNoticias.DTOS.Noticia;
 using SiteNoticias.DTOS.Usuario;
 using SiteNoticias.Excecoes;
 using SiteNoticias.Services;
+using System.Data;
 
 namespace SiteNoticias.Controller;
 
 
 [ApiController]
 [Route("noticias")]
+
 public class NoticiaController:ControllerBase
 {
 
@@ -21,7 +24,7 @@ public class NoticiaController:ControllerBase
         _noticiaServico = servico;
     }
 
-
+    [Authorize(Roles = "ADM")]
     [HttpPost]
     public ActionResult<NoticiaResposta> PostNoticia(NoticiaRequisicao novaNoticia)
     {
@@ -36,7 +39,7 @@ public class NoticiaController:ControllerBase
             return BadRequest(e.Message);
         }
     }
-
+   
     [HttpGet]
     public ActionResult<List<NoticiaResposta>> GetNoticias()
     {
@@ -55,7 +58,7 @@ public class NoticiaController:ControllerBase
             return NotFound(e.Message);
         }
     }
-
+    [Authorize(Roles = "ADM")]
     [HttpDelete("{id:int}")]
     public ActionResult DeleteNoticia([FromRoute] int id)
     {
@@ -69,7 +72,7 @@ public class NoticiaController:ControllerBase
             return NotFound(e.Message);
         }
     }
-
+    [Authorize(Roles = "ADM")]
     [HttpPut("{id:int}")]
     public ActionResult<NoticiaResposta>
       PutNoticia([FromRoute] int id, [FromBody] NoticiaCriarAtualizarRequisicao noticiaEditada)
@@ -84,8 +87,43 @@ public class NoticiaController:ControllerBase
         }
     }
 
-  
 
+    [HttpPut("{noticiaId:int}/curtir")]
+    public ActionResult<NoticiaResposta>
+      PutCurtida([FromRoute] int noticiaId)
+    {
+        try
+        {
+            return Ok(_noticiaServico.AdicionarCurtida(noticiaId));
+        }
+        catch (BadHttpRequestException e)
+        {
+            return BadRequest(e.Message);
+        }
+        catch (Exception e)
+        {
+            return NotFound(e.Message);
+        }
+    }
+
+
+    [HttpPut("{noticiaId:int}/view")]
+    public ActionResult<NoticiaResposta>
+      PutView([FromRoute] int noticiaId)
+    {
+        try
+        {
+            return Ok(_noticiaServico.AdicionarView(noticiaId));
+        }
+        catch (BadHttpRequestException e)
+        {
+            return BadRequest(e.Message);
+        }
+        catch (Exception e)
+        {
+            return NotFound(e.Message);
+        }
+    }
 
 
 

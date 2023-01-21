@@ -2,6 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using SiteNoticias.Data;
 using SiteNoticias.Repositorios;
 using SiteNoticias.Services;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +36,10 @@ builder.Services.AddScoped<ComentarioServico>();
 
 builder.Services.AddScoped<ComentarioRepositorio>();
 
+//--------------------------------------------------
+
+builder.Services.AddScoped<AutenticacaoServico>();
+
 
 
 builder.Services.AddDbContext<ContextoBD>(
@@ -45,6 +53,23 @@ builder.Configuration.GetConnectionString("ConexaoBanco"),
 ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("ConexaoBanco"))
 
 ));
+
+//Configurações para usar Autenticação com JWT
+var JWTChave = Encoding.ASCII.GetBytes(builder.Configuration["JWTChave"]);
+builder.Services
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.SaveToken = true;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            IssuerSigningKey = new SymmetricSecurityKey(JWTChave),
+            ValidateIssuerSigningKey = true,
+            ValidateIssuer = false,
+            ValidateAudience = false,
+        };
+    });
+
 
 builder.Services.AddCors();
 
@@ -74,6 +99,12 @@ app.UseCors(x => x
 
 
 app.UseHttpsRedirection();
+
+
+app.UseAuthentication();
+
+
+
 
 app.UseAuthorization();
 

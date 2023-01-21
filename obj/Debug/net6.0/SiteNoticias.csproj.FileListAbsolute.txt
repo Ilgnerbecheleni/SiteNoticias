@@ -116,3 +116,11 @@ C:\Users\ilgne\OneDrive\Área de Trabalho\POO2\obj\Debug\net6.0\ref\SiteNoticias
 C:\Users\ilgne\OneDrive\Área de Trabalho\POO2\bin\Debug\net6.0\BCrypt.Net-Next.dll
 C:\Users\ilgne\OneDrive\Área de Trabalho\POO2\bin\Debug\net6.0\Mapster.dll
 C:\Users\ilgne\OneDrive\Área de Trabalho\POO2\bin\Debug\net6.0\Mapster.Core.dll
+C:\Users\ilgne\OneDrive\Área de Trabalho\POO2\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\ilgne\OneDrive\Área de Trabalho\POO2\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ilgne\OneDrive\Área de Trabalho\POO2\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ilgne\OneDrive\Área de Trabalho\POO2\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ilgne\OneDrive\Área de Trabalho\POO2\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ilgne\OneDrive\Área de Trabalho\POO2\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ilgne\OneDrive\Área de Trabalho\POO2\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ilgne\OneDrive\Área de Trabalho\POO2\bin\Debug\net6.0\System.Security.Permissions.dll
